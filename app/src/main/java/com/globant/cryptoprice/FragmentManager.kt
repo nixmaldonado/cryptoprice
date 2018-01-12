@@ -21,6 +21,6 @@ class FragmentManager(fm: android.support.v4.app.FragmentManager) : FragmentPage
     }
 
     override fun getCount(): Int {
-        return 0
+        return 3
     }
 }

@@ -1,6 +1,5 @@
 package com.globant.cryptoprice.quotation
 
-import com.globant.cryptoprice.MainActivity
 import com.globant.cryptoprice.model.CurrencyQuotation
 import com.globant.cryptoprice.repository.PricesService
 import retrofit2.Call
@@ -9,7 +8,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Controller(private val activity: MainActivity) : Callback<List<CurrencyQuotation>> {
+class Controller(private val activity: QuotationFragment) : Callback<List<CurrencyQuotation>> {
 
     lateinit var recyclerAdapter: RecyclerAdapter
 
