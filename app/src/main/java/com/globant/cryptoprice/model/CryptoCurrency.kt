@@ -1,8 +1,12 @@
 package com.globant.cryptoprice.model
 
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+
+@Entity(primaryKeys = ["name"])
 class CryptoCurrency {
-    val name = ""
-    var amount = 0.00
-    val dateBought = ""
-    val moneySpent = 0
+
+    @PrimaryKey
+    var name = ""
+    var amount = ""
 }

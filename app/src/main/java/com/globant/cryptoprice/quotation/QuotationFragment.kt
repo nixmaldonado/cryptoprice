@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.fragment_quotation.*
 
 class QuotationFragment : Fragment() {
 
-    lateinit var linearLayoutManager: LinearLayoutManager
+    private lateinit var layoutManager: LinearLayoutManager
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,9 +24,9 @@ class QuotationFragment : Fragment() {
         val controller = QuotationController(this)
         controller.start()
 
-        linearLayoutManager = LinearLayoutManager(activity)
-        recycler_view.layoutManager = linearLayoutManager
-        recycler_view.adapter = controller.recyclerAdapter
+        layoutManager = LinearLayoutManager(activity)
+        recycler_view.layoutManager = layoutManager
+        recycler_view.adapter = controller.adapter
     }
 
     fun showProgressBar() {

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.globant.cryptoprice.transaction.TransactionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragmlayoutManageryout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

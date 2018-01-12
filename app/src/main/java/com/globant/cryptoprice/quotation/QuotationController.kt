@@ -8,14 +8,14 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class QuotationController(private val activity: QuotationFragment) : Callback<List<CurrencyQuotation>> {
+class QuotationController(private val fragment: QuotationFragment) : Callback<List<CurrencyQuotation>> {
 
-    lateinit var recyclerAdapter: RecyclerAdapter
+    lateinit var adapter: RecyclerAdapter
 
     private var list: List<CurrencyQuotation> = ArrayList()
 
     fun start() {
-        activity.showProgressBar()
+        fragment.showProgressBar()
         val retrofit = Retrofit.Builder()
                 .baseUrl("https://api.coinmarketcap.com/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -23,15 +23,15 @@ class QuotationController(private val activity: QuotationFragment) : Callback<Li
 
         val service = retrofit.create(PricesService::class.java)
 
-        recyclerAdapter = RecyclerAdapter(list)
+        adapter = RecyclerAdapter(list)
 
         service.getPrices().enqueue(this)
     }
 
     override fun onResponse(call: Call<List<CurrencyQuotation>>?, response: Response<List<CurrencyQuotation>>?) {
-        recyclerAdapter.array = response?.body()!!
-        recyclerAdapter.notifyDataSetChanged()
-        activity.hideProgressBar()
+        adapter.array = response?.body()!!
+        adapter.notifyDataSetChanged()
+        fragment.hideProgressBar()
 
     }
 

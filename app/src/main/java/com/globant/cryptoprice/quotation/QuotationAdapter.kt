@@ -3,10 +3,10 @@ package com.globant.cryptoprice.quotation
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import com.globant.cryptoprice.R
 import com.globant.cryptoprice.model.CurrencyQuotation
+import com.globant.cryptoprice.utils.CustomView
 import kotlinx.android.synthetic.main.currency_item.view.*
 import java.text.NumberFormat
 
@@ -45,5 +45,3 @@ class RecyclerAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapter
         return array.size
     }
 }
-
-class CustomView(val view: View) : RecyclerView.ViewHolder(view)
