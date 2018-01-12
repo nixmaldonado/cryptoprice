@@ -8,11 +8,11 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class Controller(private val activity: QuotationFragment) : Callback<List<CurrencyQuotation>> {
+class QuotationController(private val activity: QuotationFragment) : Callback<List<CurrencyQuotation>> {
 
     lateinit var recyclerAdapter: RecyclerAdapter
 
-    var list: List<CurrencyQuotation> = ArrayList()
+    private var list: List<CurrencyQuotation> = ArrayList()
 
     fun start() {
         activity.showProgressBar()

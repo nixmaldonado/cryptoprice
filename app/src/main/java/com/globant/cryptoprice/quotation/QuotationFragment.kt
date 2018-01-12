@@ -21,7 +21,7 @@ class QuotationFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val controller = Controller(this)
+        val controller = QuotationController(this)
         controller.start()
 
         linearLayoutManager = LinearLayoutManager(activity)
