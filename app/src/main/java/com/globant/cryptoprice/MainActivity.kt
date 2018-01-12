@@ -18,6 +18,8 @@ class MainActivity : FragmentActivity() {
         fragmentManager = FragmentManager(supportFragmentManager)
         viewPager = pager
         viewPager.setPageTransformer(true, ZoomOutPageTransformer())
+        tabs.setupWithViewPager(viewPager)
+
         viewPager.adapter = fragmentManager
     }
 }

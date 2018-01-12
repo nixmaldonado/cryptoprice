@@ -8,6 +8,8 @@ import com.globant.cryptoprice.wallet.WalletFragment
 
 class FragmentManager(fm: android.support.v4.app.FragmentManager) : FragmentPagerAdapter(fm) {
 
+    val tittles = arrayListOf("Precios", "Billetera", "Movimientos")
+
     override fun getItem(position: Int): Fragment? {
         when (position) {
             0 ->
@@ -22,5 +24,9 @@ class FragmentManager(fm: android.support.v4.app.FragmentManager) : FragmentPage
 
     override fun getCount(): Int {
         return 3
+    }
+
+    override fun getPageTitle(position: Int): CharSequence {
+        return tittles[position]
     }
 }
