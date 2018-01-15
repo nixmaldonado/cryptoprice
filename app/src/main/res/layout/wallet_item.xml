@@ -2,9 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,21 +14,24 @@
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_weight="1"
             android:textColor="@android:color/black"
             android:textSize="24sp"
-            tools:text="Bitcoin" />
+            android:textStyle="bold"
+            tools:text="Bitcoin | BTC" />
 
         <TextView
             android:id="@+id/currency_amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:textColor="@android:color/black"
             android:textSize="24sp"
-            tools:text="0.00001" />
+            android:textStyle="bold"
+            tools:text="0.0001" />
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,20 +39,27 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/money_spent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_weight="1"
-            android:text="@string/usd"
             android:textColor="@android:color/black"
-            android:textSize="24sp" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="U$D" />
 
         <TextView
-            android:id="@+id/price_in_usd"
+            android:id="@+id/current_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
-            tools:text="$100" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="$400" />
+
     </LinearLayout>
+
 
 </LinearLayout>
