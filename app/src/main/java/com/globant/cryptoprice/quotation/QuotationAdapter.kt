@@ -10,7 +10,7 @@ import com.globant.cryptoprice.utils.CustomView
 import kotlinx.android.synthetic.main.currency_item.view.*
 import java.text.NumberFormat
 
-class RecyclerAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapter<CustomView>() {
+class QuotationAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapter<CustomView>(){
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomView {
         val inflater = LayoutInflater.from(parent?.context)

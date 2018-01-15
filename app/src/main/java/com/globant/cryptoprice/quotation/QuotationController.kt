@@ -1,5 +1,6 @@
 package com.globant.cryptoprice.quotation
 
+import com.globant.cryptoprice.MainActivity
 import com.globant.cryptoprice.model.CurrencyQuotation
 import com.globant.cryptoprice.repository.PricesService
 import retrofit2.Call
@@ -10,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class QuotationController(private val fragment: QuotationFragment) : Callback<List<CurrencyQuotation>> {
 
-    lateinit var adapter: RecyclerAdapter
+    lateinit var adapter: QuotationAdapter
 
     private var list: List<CurrencyQuotation> = ArrayList()
 
@@ -23,7 +24,7 @@ class QuotationController(private val fragment: QuotationFragment) : Callback<Li
 
         val service = retrofit.create(PricesService::class.java)
 
-        adapter = RecyclerAdapter(list)
+        adapter = QuotationAdapter(list)
 
         service.getPrices().enqueue(this)
     }
