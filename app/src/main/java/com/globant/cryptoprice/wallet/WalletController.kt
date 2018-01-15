@@ -1,21 +1,22 @@
 package com.globant.cryptoprice.wallet
 
+import com.globant.cryptoprice.model.AppDatabase
 import com.globant.cryptoprice.model.CryptoCurrency
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class WalletController(private val fragment: WalletFragment) : Callback<List<CryptoCurrency>> {
+class WalletController(private val view: WalletFragment) : Callback<List<CryptoCurrency>> {
 
     lateinit var adapter: WalletAdapter
 
     private lateinit var list: List<CryptoCurrency>
 
     fun start() {
-        val currency = CryptoCurrency()
-        currency.amount = "1"
-        currency.name = "Bitcoin"
-        list = arrayListOf(currency)
+        var database = AppDatabase.getAppDatabase(view.context)
+
+        list = database.currencyDao().getAll()
+
         adapter = WalletAdapter(list)
     }
 

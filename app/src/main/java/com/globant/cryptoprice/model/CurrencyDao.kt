@@ -7,7 +7,7 @@ import android.arch.persistence.room.Query
 @Dao
 interface CurrencyDao {
 
-    @Query("SELECT * FROM CryptoCurrency")
+    @Query("SELECT * FROM currencies")
     fun getAll(): List<CryptoCurrency>
 
     @Insert

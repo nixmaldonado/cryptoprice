@@ -1,6 +1,5 @@
 package com.globant.cryptoprice.quotation
 
-import com.globant.cryptoprice.MainActivity
 import com.globant.cryptoprice.model.CurrencyQuotation
 import com.globant.cryptoprice.repository.PricesService
 import retrofit2.Call
