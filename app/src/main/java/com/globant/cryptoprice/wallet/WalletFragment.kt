@@ -1,11 +1,13 @@
 package com.globant.cryptoprice.wallet
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.globant.cryptoprice.buycurrency.BuyCurrencyActivity
 import com.globant.cryptoprice.R
 import kotlinx.android.synthetic.main.fragment_wallet.*
 
@@ -26,5 +28,10 @@ class WalletFragment : Fragment() {
         layoutManager = LinearLayoutManager(activity)
         wallet_recycler.layoutManager = layoutManager
         wallet_recycler.adapter = controller.adapter
+
+        wallet_fab.setOnClickListener({
+            val intent = Intent(activity, BuyCurrencyActivity::class.java)
+            startActivity(intent)
+        })
     }
 }

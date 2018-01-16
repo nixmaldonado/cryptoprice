@@ -5,4 +5,5 @@
     <string name="title_activity_portfolio">PortfolioActivity</string>
     <string name="one_hour">1h: %1$s %</string>
     <string name="usd">U$D</string>
+    <string name="zero">0</string>
 </resources>

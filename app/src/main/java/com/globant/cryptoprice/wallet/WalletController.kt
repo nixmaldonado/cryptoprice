@@ -13,7 +13,7 @@ class WalletController(private val view: WalletFragment) : Callback<List<CryptoC
     private lateinit var list: List<CryptoCurrency>
 
     fun start() {
-        var database = AppDatabase.getAppDatabase(view.context)
+        val database = AppDatabase.getAppDatabase(view.context)
 
         list = database.currencyDao().getAll()
 
