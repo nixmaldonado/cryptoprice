@@ -10,5 +10,5 @@ interface PricesService {
     fun getPrices(): Call<List<CurrencyQuotation>>
 
     @GET("v1/ticker/{currencyName}")
-    fun getPrice(@Path("currencyName") currencyName : String) : Call<CurrencyQuotation>
+    fun getPrice(@Path("currencyName") currencyName : String) : Call<List<CurrencyQuotation>>
 }
