@@ -2,7 +2,6 @@ package com.globant.cryptoprice.quotation
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.globant.cryptoprice.quotation.QuotationAdapter
 
 class QuotationView(val view: View, val adapter: QuotationAdapter) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
@@ -11,7 +10,8 @@ class QuotationView(val view: View, val adapter: QuotationAdapter) : RecyclerVie
     }
 
     override fun onClick(view : View?) {
-        adapter.getCurrencyQuotation(this.adapterPosition)
+        val currency = adapter.getCurrencyQuotation(this.adapterPosition)
+        adapter.startDetailActivity(currency)
     }
 
 }

@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:padding="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:orientation="vertical">
 
-    <TextView
-        android:textAlignment="center"
-        tools:text="Bitcoin"
-        android:id="@+id/currency_name"
-        android:layout_weight="1"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="0dp"/>
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-    <TextView
-        android:textAlignment="center"
-        tools:text="0.02341"
-        android:id="@+id/currency_amount"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="0dp"/>
+        <TextView
+            android:id="@+id/currency_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            tools:text="Bitcoin" />
+
+        <View
+            android:background="@android:color/black"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:id="@+id/currency_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            tools:text="0.02341" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
 
 </LinearLayout>
