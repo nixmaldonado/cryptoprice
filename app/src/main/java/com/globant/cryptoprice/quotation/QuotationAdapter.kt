@@ -6,19 +6,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.globant.cryptoprice.R
 import com.globant.cryptoprice.model.CurrencyQuotation
-import com.globant.cryptoprice.utils.CustomView
 import kotlinx.android.synthetic.main.currency_item.view.*
 import java.text.NumberFormat
 
-class QuotationAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapter<CustomView>(){
+class QuotationAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapter<QuotationView>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomView {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): QuotationView {
         val inflater = LayoutInflater.from(parent?.context)
         val rowView = inflater.inflate(R.layout.currency_item, parent, false)
-        return CustomView(rowView)
+        return QuotationView(rowView, this)
     }
 
-    override fun onBindViewHolder(holder: CustomView?, position: Int) {
+    override fun onBindViewHolder(holder: QuotationView?, position: Int) {
 
         val price = array[position].price_usd.toDouble()
         val name = array[position].name
@@ -43,5 +42,9 @@ class QuotationAdapter(var array: List<CurrencyQuotation>) : RecyclerView.Adapte
 
     override fun getItemCount(): Int {
         return array.size
+    }
+
+    fun getCurrencyQuotation(postion : Int): CurrencyQuotation {
+        return array[postion]
     }
 }

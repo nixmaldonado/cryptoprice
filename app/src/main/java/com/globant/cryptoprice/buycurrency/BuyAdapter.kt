@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.globant.cryptoprice.R
-import com.globant.cryptoprice.utils.CustomView
+import com.globant.cryptoprice.quotation.QuotationView
 import kotlinx.android.synthetic.main.buy_currency_item.view.*
 
-class BuyAdapter : RecyclerView.Adapter<CustomView>() {
+class BuyAdapter : RecyclerView.Adapter<BuyView>() {
 
     var checkedView : View? = null
     var selectedCurrency : String? = null
@@ -16,7 +16,7 @@ class BuyAdapter : RecyclerView.Adapter<CustomView>() {
     private val currencies = arrayListOf("Bitcoin", "Ethereum", "Ripple",
             "Salt", "Cardano", "Litecoin", "Steem", "NEO", "Stellar", "Dogecoin")
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomView {
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BuyView {
         val inflater = LayoutInflater.from(parent?.context)
         val rowView = inflater.inflate(R.layout.buy_currency_item, parent, false)
         rowView.setOnClickListener({
@@ -27,10 +27,10 @@ class BuyAdapter : RecyclerView.Adapter<CustomView>() {
                 selectedCurrency = rowView.currency_name.text.toString()
             }
         })
-        return CustomView(rowView)
+        return BuyView(rowView)
     }
 
-    override fun onBindViewHolder(holder: CustomView?, position: Int) {
+    override fun onBindViewHolder(holder: BuyView?, position: Int) {
         holder?.view?.currency_name?.text = currencies[position]
     }
 
