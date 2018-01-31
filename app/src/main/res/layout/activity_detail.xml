@@ -51,14 +51,19 @@
         android:textSize="24sp"
         tools:text="U$D 10.000" />
 
+    <View
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimaryDark"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="8dp"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:text="Variacion" />
+        android:text="Variación" />
 
     <LinearLayout
         android:layout_width="match_parent"

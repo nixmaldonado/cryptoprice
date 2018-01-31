@@ -20,17 +20,15 @@ class DetailActivity : AppCompatActivity() {
         val formatter = NumberFormat.getCurrencyInstance()
         price.text = "${formatter.format(currency.price_usd.toDouble())}"
 
-        var percentageChangeWeek = currency.percent_change_7d.toDouble()
-
-        if (percentageChangeWeek >= 0) {
-            percentage_variation_week.setTextColor(Color.parseColor("#49ce40"))
-        } else {
-            percentage_variation_week.setTextColor(Color.RED)
-        }
-
-        percentage_variation_week.text = "7 Días: ${percentageChangeWeek.toString()} %"
+        percentage_variation_week.text = "7 Días: ${currency.percent_change_7d} %"
+        percentage_variation_week.setTextColor(getVariationColor(currency.percent_change_7d.toDouble()))
         percentage_variation_hour.text = "1 Hora: ${currency.percent_change_1h} %"
+        percentage_variation_hour.setTextColor(getVariationColor(currency.percent_change_1h.toDouble()))
         percentage_variation_day.text = "24 Horas: ${currency.percent_change_24h} %"
+        percentage_variation_day.setTextColor(getVariationColor(currency.percent_change_24h.toDouble()))
+    }
 
+    private fun getVariationColor(variation : Double): Int {
+        return if(variation >= 0) Color.parseColor("#49ce40") else Color.RED
     }
 }
