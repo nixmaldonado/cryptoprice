@@ -1,16 +1,49 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.globant.cryptoprice.transaction.TransactionFragment">
 
-    <!-- TODO: Update blank fragmlayoutManageryout -->
     <TextView
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="24sp"
+        android:id="@+id/fiat_balance"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Under Construction" />
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        tools:text="$10.000" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/amount_to_add"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/money_icon"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/add_money_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="8dp"
+            android:text="Agregar Dinero Fiat" />
+
+    </LinearLayout>
+
+</LinearLayout>

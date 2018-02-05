@@ -29,12 +29,8 @@ class QuotationFragment : Fragment() {
         recycler_view.adapter = controller.adapter
     }
 
-    fun showProgressBar() {
-        progress_bar.visibility = View.VISIBLE
-    }
-
     fun hideProgressBar() {
-        progress_bar.visibility = View.GONE
+        progress_bar?.visibility = View.GONE
     }
 }
 

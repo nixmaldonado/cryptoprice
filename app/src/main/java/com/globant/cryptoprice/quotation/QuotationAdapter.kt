@@ -33,9 +33,9 @@ class QuotationAdapter(var array: List<CurrencyQuotation>, val context : Context
         val name = array[position].name
 
         val formatter = NumberFormat.getCurrencyInstance()
+        holder?.view?.price?.text = formatter.format(price)
 
         holder?.view?.name?.text = name
-        holder?.view?.price?.text = formatter.format(price)
     }
 
     override fun getItemCount(): Int {
