@@ -1,6 +1,7 @@
 package com.nuklas.cryptoprice
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Test
 
 /**
@@ -8,9 +9,15 @@ import org.junit.Test
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class UnitTests {
     @Test
-    fun addition_isCorrect() {
+    fun smokeTest() {
         assertEquals(4, 2 + 2)
+    }
+
+    @Test
+    fun mainActivityShouldNotBeNull(){
+        val mainActivity = MainActivity()
+        assertNotNull(mainActivity)
     }
 }
